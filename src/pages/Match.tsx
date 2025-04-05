@@ -2,13 +2,11 @@
 import { useState } from "react";
 import { teamList } from "../data/teams";
 import TeamCard from "../components/TeamCard";
-import { getAppliedTeamIds } from "../utils/storage"; // ✅ 지원 여부 확인 유틸
+import { getAppliedTeamIds } from "../utils/storage"; 
 
 export default function Match() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  // 지원한 팀 ID 목록을 가져옴
-  const appliedIds = getAppliedTeamIds(); // ✅ 지원한 팀 ID 목록
+  const appliedIds = getAppliedTeamIds();
 
   const uniqueTags = Array.from(
     new Set(teamList.flatMap((team) => team.tags))
@@ -49,7 +47,7 @@ export default function Match() {
             title={team.title}
             description={team.description}
             status={team.status}
-            applied={appliedIds.includes(team.id)} // ✅ 지원 여부 전달
+            applied={appliedIds.includes(team.id)}
           />
         ))}
       </div>

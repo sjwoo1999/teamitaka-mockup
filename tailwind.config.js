@@ -1,23 +1,18 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // ✅ 여기에 실제 코드 경로를 넣어줘야 Tailwind가 스캔함
+    "./src/**/*.{html,js,ts,jsx,tsx}",  // TailwindCSS가 적용될 파일 범위 설정
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#FF5A5F",        // 주요 브랜드 컬러
-        "primary-dark": "#e0484c", // 버튼 hover
-        gray: {
-          100: "#f5f5f5",
-          200: "#e5e7eb",
-          600: "#4b5563",
-          700: "#374151",
-          800: "#1f2937",
-        },
+        primary: "#FF6600",  // 고유한 브랜드 색상
+        secondary: "#F4F4F4", // 배경 색상
+        accent: "#333333", // 텍스트 색상
+      },
+      fontFamily: {
+        sans: ["Helvetica Neue", "Arial", "sans-serif"],  // 기본 폰트
       },
     },
   },
   plugins: [],
-}
+};

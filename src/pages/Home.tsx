@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <h2>김조영</h2>
         <p>움직여야만 디자인지 재활 중</p>
         <div className="tags">
-          <span className="tag">번팀</span>
+          <span className="tag">브랜딩</span>
           <span className="tag">UXUI</span>
         </div>
         <div className="stats">

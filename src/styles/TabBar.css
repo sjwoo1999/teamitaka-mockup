@@ -1,15 +1,17 @@
 /* TabBar.css */
 .tab-bar {
-    position: fixed; /* 하단 고정 */
+    position: fixed;
     bottom: 0;
-    left: 0;
-    width: 390px; /* .app-container와 동일한 폭 */
-    height: 60px; /* 고정 높이 */
+    left: 50%;
+    transform: translateX(-50%); /* Center TabBar */
+    width: 390px; /* Same as .app-container width */
+    height: 60px; /* Fixed height */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Space out the tabs */
     align-items: center;
     background-color: #fff;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
   }
   
   .tab-item {
@@ -23,18 +25,15 @@
     transition: color 0.3s ease;
   }
   
-  .nav-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .tab-item.active {
-    color: #FF6F00; /* 오렌지색 강조 */
+    color: #FF6F00; /* Active tab color */
   }
   
   .tab-item span {
     margin-top: 2px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
   }

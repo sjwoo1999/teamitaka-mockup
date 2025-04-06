@@ -1,59 +1,14 @@
 /* 📄 src/styles/ProjectCard.css */
-
-/* 카드 기본 스타일 */
 .project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 1.5rem;
-  }
-  
-  /* 카드 hover 시 효과 */
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 카드 제목 스타일 */
-  .project-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* 카드 내용 스타일 */
-  .project-card .description {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 1rem;
-  }
-  
-  /* 상태 및 D-Day */
-  .project-card .status,
-  .project-card .dday {
-    font-size: 0.875rem;
-    color: #555;
-  }
-  
-  /* 카드 버튼 스타일 */
-  .project-card .buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .project-card .buttons button {
-    padding: 0.6em 1.2em;
-    border-radius: 8px;
-    background-color: #646cff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .project-card .buttons button:hover {
-    background-color: #535bf2;
-  }
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;  /* 여백을 더 넓게 */
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;  /* 텍스트 간격 추가 */
+}

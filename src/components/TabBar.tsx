@@ -1,24 +1,35 @@
-// src/components/TabBar.tsx
-import { Link, useLocation } from "react-router-dom";
+// TabBar.tsx
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/TabBar.css';
 
-export default function TabBar() {
+const TabBar: React.FC = () => {
   const location = useLocation();
-  const tabs = [
-    { name: "홈", path: "/" },
-    { name: "매칭", path: "/match" },
-    { name: "프로젝트", path: "/project" },
-    { name: "프로필", path: "/profile" },
-  ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-2">
-      {tabs.map((tab) => (
-        <Link key={tab.path} to={tab.path}>
-          <div className={`text-sm ${location.pathname === tab.path ? "text-primary font-bold" : "text-gray-400"}`}>
-            {tab.name}
-          </div>
+    <div className="tab-bar">
+      <div className={`tab-item ${location.pathname === '/home' ? 'active' : ''}`}>
+        <Link to="/home" className="nav-link">
+          <span>메인</span>
         </Link>
-      ))}
-    </nav>
+      </div>
+      <div className={`tab-item ${location.pathname === '/project' ? 'active' : ''}`}>
+        <Link to="/project" className="nav-link">
+          <span>프로젝트 관리</span>
+        </Link>
+      </div>
+      <div className={`tab-item ${location.pathname === '/team' ? 'active' : ''}`}>
+        <Link to="/team" className="nav-link">
+          <span>팀매칭</span>
+        </Link>
+      </div>
+      <div className={`tab-item ${location.pathname === '/profile' ? 'active' : ''}`}>
+        <Link to="/profile" className="nav-link">
+          <span>프로필</span>
+        </Link>
+      </div>
+    </div>
   );
-}
+};
+
+export default TabBar;

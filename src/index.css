@@ -1,30 +1,65 @@
-/* 📄 src/index.css (global.css와 동일) */
-/* 기본적인 전역 스타일을 설정합니다 */
+/* index.css */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; /* 기본 배경 색을 어두운 색으로 설정 */
+  color: #333;
+}
+
+/* index.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* 전체 화면 채우기 */
+  background-color: #000; /* 화면 외부 검은색 */
+  display: flex;
+  justify-content: center; /* 정확히 중앙 */
+  align-items: center; /* 정확히 중앙 */
+  overflow: hidden; /* 브라우저 스크롤 방지 */
 }
 
 body {
   margin: 0;
+  min-height: 100vh; /* 최소 높이 보장 */
+}
+
+.app-container {
+  width: 390px; /* 고정 폭 */
+  height: 100vh; /* 고정 높이 */
+  background-color: #fff; /* 흰색 배경 */
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #242424; /* 배경 색을 어두운 색으로 설정 */
-  color: #fff; /* 텍스트 색상 */
+  flex-direction: column;
+  overflow: hidden; /* 외부 스크롤 방지 */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* 부드러운 그림자 */
+  position: relative; /* TabBar 고정을 위한 기준 */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#root {
+  flex-grow: 1;
+  padding: 0.5rem;
+  padding-bottom: 60px; /* TabBar 높이만큼 패딩 추가 */
+  overflow-y: auto; /* 내부 스크롤 활성화 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-a:hover {
-  color: #535bf2;
+/* 스크롤바 스타일링 */
+#root::-webkit-scrollbar {
+  width: 6px;
+}
+
+#root::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#root::-webkit-scrollbar-thumb {
+  background: #FF6F00; /* 오렌지색 스크롤바 */
+  border-radius: 10px;
+}
+
+#root::-webkit-scrollbar-thumb:hover {
+  background: #e65c00;
 }

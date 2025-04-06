@@ -1,46 +1,25 @@
-/* 📄 src/styles/App.css */
+/* 앱 전체 배경과 레이아웃 설정 */
+body {
+  background-color: #f4f4f4; /* 밝은 배경 색상 */
+  color: #333; /* 텍스트 색상 */
+  display: flex;
+  flex-direction: column; /* 세로로 정렬 */
+  min-height: 100vh; /* 화면을 가득 채우게 설정 */
+  justify-content: space-between; /* 상단과 하단을 분리 */
+}
 
-/* 기본적인 화면 레이아웃 설정 */
+/* #root는 전체 페이지를 감싸고 중앙에 콘텐츠를 정렬 */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #f7f7f7; /* 전체 배경색을 연한 회색으로 설정 */
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가운데 정렬 */
+  width: 100%;
+  padding: 20px;
 }
 
-/* 로고 스타일링 */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-/* 로고 hover 효과 */
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* 애니메이션 설정 */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* 애니메이션을 선호하지 않는 경우 */
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* 모바일에서 TabBar의 아이템 크기 조정 */
+@media (max-width: 768px) {
+  .tab-item {
+    font-size: 12px;
   }
 }

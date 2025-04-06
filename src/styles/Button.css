@@ -8,20 +8,23 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: border-color 0.25s, background-color 0.3s;
     color: white;
+  }
+  
+  /* primary 버튼 스타일 */
+  button.bg-primary {
+    background-color: #1a1a1a;
+  }
+  
+  /* secondary 버튼 스타일 */
+  button.bg-gray-500 {
+    background-color: #808080;
   }
   
   /* 버튼 hover 시 색상 변화 */
   button:hover {
-    border-color: #646cff;
     background-color: #535bf2; /* 버튼 색상 변경 */
-  }
-  
-  /* 버튼 클릭 시 포커스 효과 */
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    border-color: #646cff;
   }

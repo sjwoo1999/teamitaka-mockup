@@ -1,20 +1,36 @@
 /* 앱 전체 배경과 레이아웃 설정 */
+/* body 스타일 - 전체 화면을 가득 차게 하고 중앙 정렬 */
 body {
   background-color: #f4f4f4; /* 밝은 배경 색상 */
   color: #333; /* 텍스트 색상 */
-  display: flex;
-  flex-direction: column; /* 세로로 정렬 */
-  min-height: 100vh; /* 화면을 가득 채우게 설정 */
-  justify-content: space-between; /* 상단과 하단을 분리 */
+  margin: 0; /* 기본 여백 제거 */
+  height: 100vh; /* 전체 화면을 채우도록 설정 */
+  display: flex; /* 플렉스박스 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
 }
 
 /* #root는 전체 페이지를 감싸고 중앙에 콘텐츠를 정렬 */
+/* #root는 전체 페이지를 감싸고 중앙 정렬 */
 #root {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* 가운데 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
   width: 100%;
-  padding: 20px;
+  height: 100%;
+}
+
+/* .app-container는 실제로 콘텐츠가 들어가는 부분 */
+/* .app-container는 실제로 콘텐츠가 들어가는 부분 */
+.app-container {
+  width: 390px; /* 고정 폭 */
+  height: 100vh; /* 화면을 가득 채우기 */
+  background-color: #fff; /* 흰색 배경 */
+  display: flex;
+  flex-direction: column; /* 세로로 정렬 */
+  overflow: hidden; /* 외부 스크롤 방지 */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* 부드러운 그림자 */
+  position: relative; /* TabBar 고정을 위한 기준 */
 }
 
 /* 모바일에서 TabBar의 아이템 크기 조정 */

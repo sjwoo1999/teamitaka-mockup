@@ -1,39 +1,50 @@
-/* TabBar.css */
 .tab-bar {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Center TabBar */
-    width: 390px; /* Same as .app-container width */
-    height: 60px; /* Fixed height */
-    display: flex;
-    justify-content: space-around; /* Space out the tabs */
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    color: #333;
-    font-size: 12px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .tab-item.active {
-    color: #FF6F00; /* Active tab color */
-  }
-  
-  .tab-item span {
-    margin-top: 2px;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: inherit;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* 가운데 정렬 */
+  transform: translateX(-50%); /* 가운데 정렬 보정 */
+  display: flex;
+  flex-direction: row !important; /* 수평 배치 강제 */
+  justify-content: space-around; /* 탭 아이템을 균등하게 분배 */
+  align-items: center; /* 수직 가운데 정렬 */
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  padding: 8px 8px !important; /* 좌우 패딩을 더 줄임 */
+  height: 56px; /* 스크린샷의 높이에 맞게 조정 */
+  max-width: 375px !important; /* .home-container와 동일한 너비 */
+  width: 100%; /* 최대 너비 내에서 100% */
+  box-sizing: border-box; /* 패딩과 너비 계산 보정 */
+  z-index: 1000;
+}
+
+.tab-item {
+  flex: 1; /* 각 탭 아이템이 동일한 너비를 가지도록 */
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column; /* 아이콘과 텍스트를 세로로 배치 */
+  align-items: center; /* 수직 가운데 정렬 */
+  text-decoration: none;
+  color: #666;
+  font-size: 9px; /* 텍스트 크기를 더 작게 조정 */
+  font-weight: 500; /* 텍스트 가독성을 위해 약간 두껍게 */
+}
+
+.tab-icon {
+  color: #807B79;
+  width: 18px; /* 아이콘 크기를 더 작게 조정 */
+  height: 18px;
+  margin-bottom: 2px; /* 아이콘과 텍스트 간격 조정 */
+}
+
+.tab-item.active .nav-link {
+  color: #ff6f61; /* 활성화된 탭의 텍스트 색상 */
+}
+
+.tab-item.active .tab-icon {
+  color: #ff6f61; /* 활성화된 탭의 아이콘 색상 */
+}

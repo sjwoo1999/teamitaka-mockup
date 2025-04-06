@@ -13,14 +13,14 @@ const Home: React.FC = () => {
 
       {/* 사용자 섹션 */}
       <section className="user-section">
-        <h2>김조영</h2>
-        <p>움직여야만 디자인지 재활 중</p>
+        <h2>김조형</h2>
+        <p>홍익대학교 디자인과 재학 중</p>
         <div className="tags">
-          <span className="tag">브랜딩</span>
+          <span className="tag">브랜드</span>
           <span className="tag">UXUI</span>
         </div>
         <div className="stats">
-          <span>팀원 경쟁 5회</span> • <span>진행 중 프로젝트 3개</span>
+          <span>팀플 경험 5회</span> • <span>진행 중 프로젝트 3개</span>
         </div>
       </section>
 
@@ -28,10 +28,10 @@ const Home: React.FC = () => {
       <section className="todo-section">
         <h3>오늘의 할 일</h3>
         <label>
-          <input type="checkbox" /> 지재 모색에 정리하기
+          <input type="checkbox" /> 지표 엑셀에 정리하기
         </label>
         <label>
-          <input type="checkbox" /> 자돈 조사 및 분석하기
+          <input type="checkbox" /> 자료 조사 및 분석하기
         </label>
       </section>
 
@@ -60,10 +60,10 @@ const Home: React.FC = () => {
           <div className="project-image">🖼️</div>
           <div className="project-details">
             <span className="badge">Best</span>
-            <h4>김조영과 무서운 기획주얼 매칭 디자인지</h4>
+            <h4>김혜현 교수님 ] 비주얼 마케터 디자인 팀</h4>
             <p>팀 프로젝트 팀원 구합니다!</p>
             <div className="project-meta">
-              <span>알림바로</span> • <span>302</span> • <span>79</span> • <span>26.03.24</span>
+              <span>얼리버드</span> • <span>302</span> • <span>79</span> • <span>25.03.24</span>
             </div>
           </div>
         </div>
@@ -71,10 +71,10 @@ const Home: React.FC = () => {
           <div className="project-image">🖼️</div>
           <div className="project-details">
             <span className="badge">Best</span>
-            <h4>김조영과 무서운 기획주얼 매칭 디자인지 (2)</h4>
-            <p>팀 프로젝트 팀원 구합니다!</p>
+            <h4>김건상 교수님 ] 기초 디자인 테크닉 (2)</h4>
+            <p>함께 스케치 디벨로퍼 구합니다. 스터디 작업 ..</p>
             <div className="project-meta">
-              <span>알림바로</span> • <span>214</span> • <span>83</span> • <span>25.03.27</span>
+              <span>시라소니</span> • <span>214</span> • <span>83</span> • <span>25.03.27</span>
             </div>
           </div>
         </div>
@@ -82,10 +82,10 @@ const Home: React.FC = () => {
           <div className="project-image">🖼️</div>
           <div className="project-details">
             <span className="badge">Best</span>
-            <h4>한글을 곱씹을 지스러운해 공모전 함께할 팀원 구합니다!!</h4>
-            <p>팀 프로젝트 팀원 구합니다!</p>
+            <h4>하연솔 교수님 ] 지도하에 공모전 함께 할</h4>
+            <p>팀플리 구합니다!!</p>
             <div className="project-meta">
-              <span>알림바로</span> • <span>182</span> • <span>19</span> • <span>25.03.12</span>
+              <span>뱁새</span> • <span>182</span> • <span>19</span> • <span>25.03.12</span>
             </div>
           </div>
         </div>

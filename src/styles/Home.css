@@ -1,177 +1,178 @@
-/* Home.css */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  /* 헤더 */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-  }
-  
-  .app-title {
-    font-size: 1.5rem; /* 크기 조정 */
-    font-weight: 700;
-    color: #FF6F00;
-  }
-  
-  .notification-icon {
-    font-size: 1.2rem;
-  }
-  
-  /* 사용자 섹션 */
-  .user-section {
-    background-color: #f9f9f9;
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  .user-section h2 {
-    font-size: 1.2rem; /* 크기 조정 */
-    margin: 0;
-  }
-  
-  .user-section p {
-    font-size: 0.9rem; /* 크기 조정 */
-    color: #666;
-    margin: 0.2rem 0;
-  }
-  
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-  }
-  
-  .tag {
-    background-color: #FF6F00;
-    color: #fff;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem; /* 크기 조정 */
-  }
-  
-  .stats {
-    font-size: 0.8rem; /* 크기 조정 */
-    color: #666;
-  }
-  
-  /* 오늘의 할 일 */
-  .todo-section {
-    background-color: #f9f9f9;
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  .todo-section h3 {
-    font-size: 1rem; /* 크기 조정 */
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .todo-section label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem; /* 크기 조정 */
-    margin: 0.2rem 0;
-  }
-  
-  /* 진행중인 프로젝트 */
-  .project-section {
-    background-color: #f9f9f9;
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  .project-section h3 {
-    font-size: 1rem; /* 크기 조정 */
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .project-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .project-info h4 {
-    font-size: 0.9rem; /* 크기 조정 */
-    margin: 0;
-  }
-  
-  .project-info p {
-    font-size: 0.8rem; /* 크기 조정 */
-    color: #666;
-    margin: 0.2rem 0;
-  }
-  
-  .team-avatars {
-    display: flex;
-    gap: 0.3rem;
-  }
-  
-  .project-deadline {
-    font-size: 1rem; /* 크기 조정 */
-    color: #FF6F00;
-  }
-  
-  /* 모집 마감 임박 프로젝트 */
-  .hot-project-section {
-    background-color: #f9f9f9;
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  .hot-project-section h3 {
-    font-size: 1rem; /* 크기 조정 */
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .hot-project-card {
-    display: flex;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-  }
-  
-  .project-image {
-    width: 60px;
-    height: 60px;
-    background-color: #ddd;
-    border-radius: 4px;
-  }
-  
-  .project-details {
-    flex-grow: 1;
-  }
-  
-  .badge {
-    background-color: #FF6F00;
-    color: #fff;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem; /* 크기 조정 */
-  }
-  
-  .project-details h4 {
-    font-size: 0.9rem; /* 크기 조정 */
-    margin: 0.2rem 0;
-  }
-  
-  .project-details p {
-    font-size: 0.8rem; /* 크기 조정 */
-    color: #666;
-    margin: 0.2rem 0;
-  }
-  
-  .project-meta {
-    font-size: 0.8rem; /* 크기 조정 */
-    color: #999;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 100vh; /* 전체 화면 높이 */
+  padding-bottom: 70px; /* TabBar 높이만큼 여백 추가 */
+  max-width: 375px; /* 모바일 화면 크기에 맞게 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  background-color: #f5f5f5; /* 배경색 추가 */
+  box-sizing: border-box; /* 패딩과 너비 계산 보정 */
+}
+
+/* 나머지 스타일은 그대로 유지 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FF6F00;
+}
+
+.notification-icon {
+  font-size: 1.2rem;
+}
+
+.user-section {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-section h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.user-section p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tag {
+  background-color: #FF6F00;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.stats {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.todo-section {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.todo-section h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.todo-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.project-section {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.project-section h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-info h4 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.project-info p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.team-avatars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.project-deadline {
+  font-size: 1rem;
+  color: #FF6F00;
+}
+
+.hot-project-section {
+  background-color: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.hot-project-section h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.hot-project-card {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.project-image {
+  width: 60px;
+  height: 60px;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.project-details {
+  flex-grow: 1;
+}
+
+.badge {
+  background-color: #FF6F00;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-details h4 {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.project-details p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.project-meta {
+  font-size: 0.8rem;
+  color: #999;
+}

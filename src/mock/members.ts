@@ -1,5 +1,6 @@
-// 📄 src/data/members.ts (가짜 팀원 데이터)
-export const teamMembers = {
+// 📁 src/mock/members.ts
+
+export const membersByTeamId = {
     1: [
       { name: "김팀장", role: "PM", status: "리딩 중" },
       { name: "이지니", role: "디자이너", status: "피그마 QA" },
@@ -10,5 +11,5 @@ export const teamMembers = {
       { name: "최코드", role: "백엔드", status: "DB 스키마 설계" },
       { name: "박눈치", role: "UX 디자이너", status: "탭바 디자인" },
     ],
-  };
+  } as const;
   

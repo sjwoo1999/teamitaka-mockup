@@ -1,6 +1,6 @@
 // 📄 src/pages/TeamMatch.tsx
-import TeamCard from "../components/TeamCard";
-import { teamList } from "../data/teams";
+import TeamCard from "../../components/TeamCard";
+import { teamList } from "../../data/teams";
 
 export default function TeamMatch() {
   return (

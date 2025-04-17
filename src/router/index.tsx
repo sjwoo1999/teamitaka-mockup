@@ -1,26 +1,29 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from "../pages/Home";
-import Project from "../pages/Project";
-import ProjectDetail from "../pages/ProjectDetail"; // 프로젝트 상세 페이지 컴포넌트
-import Profile from "../pages/Profile";
-import Team from "../pages/Team";
-import TeamDetail from "../pages/TeamDetail";
-import Match from "../pages/Match";
-import '../index.css';
+import MainLayout from "@/layouts/MainLayout";
+import Home from "@/pages/Home";
+import Project from "@/pages/Project";
+import ProjectDetail from "@/pages/Project/ProjectDetail";
+import Team from "@/pages/Team";
+import TeamDetail from "@/pages/Team/TeamDetail";
+import Match from "@/pages/Match";
+import Profile from "@/pages/Profile";
+import { ROUTES } from "./routes";
 
-// React Router 설정에서 /와 /home을 동일하게 처리
-export default function Router() {
+const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/project" element={<Project />} />
-      <Route path="/profile" element={<Profile />} />
-      {/* 프로젝트 상세 페이지 경로 */}
-      <Route path="/project/:id" element={<ProjectDetail />} />
-      <Route path="/team" element={<Team />} />
-      <Route path="/team/:id" element={<TeamDetail />} />
-      <Route path="/match" element={<Match />} />
+      <Route path="/" element={<Navigate to={ROUTES.HOME} />} />
+      <Route element={<MainLayout />}>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.PROJECT} element={<Project />} />
+        <Route path={ROUTES.PROJECT_DETAIL} element={<ProjectDetail />} />
+        <Route path={ROUTES.TEAM} element={<Team />} />
+        <Route path={ROUTES.TEAM_DETAIL} element={<TeamDetail />} />
+        <Route path={ROUTES.MATCH} element={<Match />} />
+        <Route path={ROUTES.PROFILE} element={<Profile />} />
+      </Route>
     </Routes>
   );
-}
+};
+
+export default Router;

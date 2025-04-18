@@ -1,4 +1,4 @@
-// 📄 src/components/Header.tsx
+// 📄 src/components/common/Header.tsx
 import { Link } from 'react-router-dom'; // 페이지 간 라우팅을 위한 Link 컴포넌트를 import
 
 export default function Header() {

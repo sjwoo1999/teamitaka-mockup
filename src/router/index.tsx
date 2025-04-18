@@ -1,24 +1,35 @@
-// src/router/index.tsx
-import { Routes, Route, Navigate } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home";
-import Profile from "../pages/Profile";
-import { ROUTES } from "./routes";
-import { projectRoutes } from "./ProjectRoutes";
-import { teamRoutes } from "./TeamRoutes";
+// 📄 src/routes/index.tsx
+import { useRoutes } from "react-router-dom";
+import { ROUTES } from "@/router/routes";
+import MainLayout from "@/layouts/MainLayout";
+import Home from "@/pages/Home";
+import Profile from "@/pages/Profile";
+import { projectRoutes } from "@/router/ProjectRoutes";
+import { teamRoutes } from "@/router/TeamRoutes";
 
-const Router = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to={ROUTES.HOME} />} />
-      <Route element={<MainLayout />}>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        {projectRoutes}
-        {teamRoutes}
-        <Route path={ROUTES.PROFILE} element={<Profile />} />
-      </Route>
-    </Routes>
-  );
-};
+const routes = [
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: ROUTES.HOME,
+        element: <Home />,
+      },
+      {
+        path: ROUTES.PROFILE,
+        element: <Profile />,
+      },
+      ...projectRoutes,
+      ...teamRoutes,
+    ],
+  },
+];
 
-export default Router;
+export default function Router() {
+  return useRoutes(routes);
+}

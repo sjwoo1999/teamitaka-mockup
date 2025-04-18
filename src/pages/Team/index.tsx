@@ -1,7 +1,7 @@
 // 📄 src/pages/Team.tsx
-import { teamList } from "../data/teams";
-import TeamCard from "../components/TeamCard";
-import { getAppliedTeamIds } from "../utils/storage"; // ✅ 지원 여부 확인 유틸
+import { teamList } from "@/mock/team";
+import TeamCard from "../../components/common/TeamCard";
+import { getAppliedTeamIds } from "../../utils/storage"; // ✅ 지원 여부 확인 유틸
 
 export default function Team() {
   // 지원한 팀 ID 목록을 가져옴

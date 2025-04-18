@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { teamList } from "../data/teams";
+import { teamList } from "@/mock/team";
 import {
   getAppliedTeamIds,
   getAppliedTeamDetails,
-} from "../utils/storage";
+} from "../../utils/storage";
 
 interface TagStat {
   [tag: string]: number;

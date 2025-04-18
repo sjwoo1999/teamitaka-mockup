@@ -5,13 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#4F46E5",  // 고유한 브랜드 색상
-        accent: "#F97316",
-        muted: "#6B7280",
-        success: "22C55E",
+        primary: "#F76241",  // 고유한 브랜드 색상
+        accent: "#FF8B66",
+        muted: "#3B3B3B",
+        success: "F5F5F5",
       },
       fontFamily: {
-        sans: ["Helvetica Neue", "Arial", "sans-serif"],  // 기본 폰트
+        sans: ["Pretendard", "Helvetica Neue", "Arial"],  // 기본 폰트
       },
     },
   },

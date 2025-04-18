@@ -8,3 +8,7 @@
 .app-container {
   @apply min-h-screen bg-gray-100;
 }
+
+body {
+  @apply font-sans bg-[#FAFAFA] text-sm text-gray-800;
+}

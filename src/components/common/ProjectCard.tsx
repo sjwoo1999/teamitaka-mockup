@@ -1,45 +1,51 @@
-export default function ProjectCard({
-  title,
-  description,
-  status,
-  dday,
-  userName,
-  userRole,
-  userExperience
-}: {
+// 📄 src/components/common/ProjectCard.tsx
+import { FC } from "react";
+import { UserCircle } from "lucide-react";
+import classNames from "classnames";
+import { getStatusStyle } from "@/utils/statusUtils";
+
+interface ProjectCardProps {
   title: string;
   description: string;
-  status: string;
-  dday: string;
-  userName: string;
-  userRole: string;
-  userExperience: string;
-}) {
+  teamExp: string;
+  status: "진행 중" | "오늘 시작" | "예정";
+  dDay: number;
+}
+
+const ProjectCard: FC<ProjectCardProps> = ({
+  title,
+  description,
+  teamExp,
+  status,
+  dDay,
+}) => {
+  const statusStyle = getStatusStyle(status);
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-sm mx-auto">
-      <div className="mb-4">
-        <h2 className="text-2xl font-semibold text-primary">{title}</h2>
-        <p className="text-gray-600 text-sm mt-1">{description}</p>
-      </div>
-      
-      <div className="flex items-center mt-4">
-        <img className="w-14 h-14 rounded-full border-4 border-primary" src="/path/to/profile-img.jpg" alt={userName} />
-        <div className="ml-4">
-          <h3 className="text-lg font-medium">{userName}</h3>
-          <p className="text-sm text-gray-500">{userRole}</p>
-          <p className="text-xs text-gray-400">팀원 경험 {userExperience}</p>
-        </div>
+    <div className="rounded-xl bg-[#FFF9F7] border border-[#FFE5DB] px-4 py-4 shadow-sm space-y-2">
+      <h3 className="text-lg font-semibold text-primary leading-snug">{title}</h3>
+      <p className="text-sm text-gray-700">{description}</p>
+
+      <div className="flex items-center gap-2">
+        <UserCircle className="text-primary" size={20} />
+        <span className="text-xs text-gray-500">{teamExp}</span>
       </div>
 
-      <div className="mt-4 flex justify-between">
-        <div className="text-sm font-semibold text-gray-600">상태: {status}</div>
-        <div className="text-sm font-semibold text-gray-600">D-Day: {dday}</div>
+      <div className="flex justify-between items-center text-sm mt-1">
+        <span className="text-muted">상태: {status}</span>
+        <span className="text-muted">D-Day: {dDay > 0 ? `+${dDay}` : dDay}</span>
       </div>
 
-      <div className="mt-6 flex space-x-4">
-        <button className="bg-primary text-white py-1 px-4 rounded-lg">프로젝트 진행</button>
-        <button className="bg-gray-200 text-gray-800 py-1 px-4 rounded-lg">프로젝트 수정</button>
+      <div className="flex gap-2 mt-2">
+        <button className={classNames("px-3 py-1 text-sm rounded-full", statusStyle.bg, statusStyle.text)}>
+          프로젝트 진행
+        </button>
+        <button className="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700">
+          프로젝트 수정
+        </button>
       </div>
     </div>
   );
-}
+};
+
+export default ProjectCard;

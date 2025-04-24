@@ -1,48 +1,43 @@
-import { useNavigate } from "react-router-dom";
-import clsx from "clsx";
-import Button from "./Button";
+import { FC } from "react";
+import { Users } from "lucide-react";
+import classNames from "classnames";
 
 interface TeamCardProps {
-  id: number;
   title: string;
   description: string;
-  status: string;
-  applied?: boolean; // 지원 여부
+  recruiting: boolean;
 }
 
-export default function TeamCard({
-  id,
-  title,
-  description,
-  status,
-  applied = false,
-}: TeamCardProps) {
-  const navigate = useNavigate();
+const TeamCard: FC<TeamCardProps> = ({ title, description, recruiting }) => {
+  const buttonClass = classNames(
+    "px-3 py-1 text-sm rounded-full",
+    recruiting ? "bg-primary text-white" : "bg-gray-100 text-gray-700"
+  );
+
+  const cardClass = classNames(
+    "rounded-xl border px-4 py-4 shadow-sm space-y-2",
+    recruiting ? "bg-[#FFF9F7] border-[#FFE5DB]" : "bg-white border-gray-200"
+  );
 
   return (
-    <div
-      onClick={() => navigate(`/team/${id}`)}
-      className={clsx(
-        "p-4 rounded-xl border transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.01] cursor-pointer",
-        applied
-          ? "bg-green-50 border-green-400"
-          : "bg-white border-gray-200"
-      )}
-    >
-      <div className="flex items-start justify-between mb-2">
-        <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
-        <Button
-          className={clsx(
-            "text-xs px-2 py-1 rounded-full",
-            applied
-              ? "bg-green-500 text-white"
-              : "bg-gray-200 text-gray-700"
-          )}
-        >
-          {applied ? "지원 완료" : status}
-        </Button>
+    <div className={cardClass}>
+      <h3 className="text-lg font-semibold text-primary leading-snug">
+        {title}
+      </h3>
+      <p className="text-sm text-gray-700">{description}</p>
+
+      <div className="flex items-center gap-2">
+        <Users className="text-primary" size={20} />
+        <span className="text-xs text-gray-500">팀 구성 중</span>
       </div>
-      <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+
+      <div className="flex justify-end mt-2">
+        <button className={buttonClass}>
+          {recruiting ? "모집중" : "모집 완료"}
+        </button>
+      </div>
     </div>
   );
-}
+};
+
+export default TeamCard;

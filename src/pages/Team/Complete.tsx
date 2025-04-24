@@ -1,4 +1,7 @@
-// 📄 src/pages/Complete.tsx
+// ============================
+// 📁 src/pages/Team/Complete.tsx
+// ============================
+
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,10 +10,10 @@ export default function Complete() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/project");
+      navigate("/team");
     }, 1500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
@@ -25,7 +28,7 @@ export default function Complete() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h2 className="text-lg font-semibold text-gray-800">전송 완료</h2>
+      <h2 className="text-lg font-semibold text-gray-800">지원이 완료되었습니다</h2>
     </div>
   );
 }

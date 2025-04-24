@@ -6,12 +6,14 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    /* Bundler 모드 설정 */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true,  // 이 옵션을 사용해도 괜찮음
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+
+    /* emit 설정 */
+    "noEmit": false,  // noEmit을 false로 수정하여 파일을 출력할 수 있도록 설정
 
     /* Linting */
     "strict": true,

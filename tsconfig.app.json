@@ -1,21 +1,25 @@
 {
   "compilerOptions": {
+    "composite": true,  // composite 설정 추가
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-
-    /* Bundler mode */
+    
+    /* Bundler 모드 설정 */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true,  // 이 옵션을 사용해도 괜찮음
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    
+    /* emit 설정 */
+    "noEmit": false,  // noEmit을 false로 수정하여 파일을 출력할 수 있도록 설정
+    // 또는 emitDeclarationOnly: true로 타입 선언만 출력하도록 할 수 있음
     "jsx": "react-jsx",
 
-    /* Path alias 👇 */
+    /* Path alias */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

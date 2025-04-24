@@ -1,4 +1,7 @@
-// 📄 src/pages/Team/TeamDetail.tsx
+// ============================
+// 📁 src/pages/Team/TeamDetail.tsx
+// ============================
+
 import { useParams, useNavigate } from "react-router-dom";
 import { teamList } from "@/mock/team";
 import {
@@ -24,8 +27,7 @@ const TeamDetail = () => {
     if (applied) return;
     saveAppliedTeam(numericId);
     setApplied(true);
-    alert("✅ 지원이 완료되었습니다!");
-    navigate(-1); // 이전 페이지로 이동
+    navigate("/team/complete");
   };
 
   if (!team) {
@@ -34,13 +36,9 @@ const TeamDetail = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-xl font-bold text-gray-800 mb-2">
-        {team.title}
-      </h1>
+      <h1 className="text-xl font-bold text-gray-800 mb-2">{team.title}</h1>
       <p className="text-gray-600 mb-4">{team.description}</p>
-      <p className="text-sm text-gray-500 mb-6">
-        상태: {team.status}
-      </p>
+      <p className="text-sm text-gray-500 mb-6">상태: {team.status}</p>
 
       <button
         onClick={handleApply}

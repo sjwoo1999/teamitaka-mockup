@@ -1,11 +1,13 @@
-// 📄 src/pages/Team.tsx
+// ============================
+// 📁 src/pages/Team/index.tsx
+// ============================
+
 import { teamList } from "@/mock/team";
-import TeamCard from "../../components/common/TeamCard";
-import { getAppliedTeamIds } from "../../utils/storage"; // ✅ 지원 여부 확인 유틸
+import TeamCard from "@/components/common/TeamCard";
+import { getAppliedTeamIds } from "@/utils/storage";
 
 export default function Team() {
-  // 지원한 팀 ID 목록을 가져옴
-  const appliedIds = getAppliedTeamIds(); // ✅ 지원한 팀 ID 목록
+  const appliedIds = getAppliedTeamIds();
 
   return (
     <div className="p-4">
@@ -17,8 +19,8 @@ export default function Team() {
             id={team.id}
             title={team.title}
             description={team.description}
-            status={team.status}
-            applied={appliedIds.includes(team.id)} // ✅ 지원 여부 전달
+            recruiting={team.status === "모집중"}
+            applied={appliedIds.includes(team.id)}
           />
         ))}
       </div>

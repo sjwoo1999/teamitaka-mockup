@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "target": "ES2020",  // 최신 ECMAScript
+    "lib": ["ES2020", "DOM"],  // ES2020 및 DOM 관련 타입 활성화
+    "module": "ESNext",  // 최신 모듈 시스템
+    "jsx": "react-jsx",  // JSX 사용을 위해 react-jsx로 설정
+    "esModuleInterop": true,  // esModuleInterop 활성화
+    "skipLibCheck": true,  // 라이브러리 타입 검사 건너뛰기
+    "allowSyntheticDefaultImports": true,  // 기본 import 허용
+    "noEmit": false,  // 출력 파일 생성 허용
+    "strict": true,  // 엄격한 타입 검사
+    "moduleResolution": "bundler",  // 번들러 모드 사용
+    "isolatedModules": true,  // 독립 모듈 처리
+    "noUnusedLocals": true,  // 사용되지 않는 로컬 변수 경고
+    "noUnusedParameters": true,  // 사용되지 않는 매개변수 경고
+    "noFallthroughCasesInSwitch": true,  // switch 문에서 case 구문 누락 방지
+    "noUncheckedSideEffectImports": true  // 부작용이 있는 import 경고
   },
-  "include": ["src", "vite-env.d.ts"],
+  "include": ["src", "vite-env.d.ts"],  // 포함할 파일/디렉토리 설정
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
